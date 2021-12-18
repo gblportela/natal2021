@@ -121,7 +121,7 @@ li{
     align-content: center;
     height: fit-content;
 }
-button:active{
+button:active, #btn-copiar-link:active{
     transform: scale(1.1);
 }
 button, #gift-btn{
