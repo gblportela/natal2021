@@ -1,0 +1,190 @@
+html, body {
+    font-family:  Arial, Helvetica, sans-serif;
+    background: linear-gradient(#36383f, #151154);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: center;
+    text-shadow: 0 0 5px black;
+}
+
+#text-gift{
+    font-size: larger;
+}
+#emojis{
+    position: absolute;
+    width: max-content;
+    animation: slideEmojis 10s linear infinite;
+    
+}
+@keyframes slideEmojis {
+    from{
+        transform: translateX(100vw);
+    } to{
+        transform: translateX(-100vw) ;
+    }
+}
+#corpo{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    background: transparent;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+[content]{
+    background: transparent;
+    transform: scale(0.1);
+    margin-top: 30px;
+    display: grid;
+    opacity: 0;
+    justify-items: center;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-family:  Arial, Helvetica, sans-serif;
+    
+}
+[content=started]{
+    transition: all 2s;
+    transform: scale(1);
+    transition-delay: 1s;
+}
+#img-feliz-natal{
+    width: clamp(300px, 50vw, 400px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.76);
+}
+
+.santa-claus{
+    position: absolute;
+    left: 100vw;
+    top: 40vh;
+    width: 105px;
+}
+[santa-moves]{
+    animation: santa-moves 10s linear forwards;
+    animation-delay: 7s;
+}
+@keyframes santa-moves {
+    from{
+        transform: translateX(100vw);
+    }to{
+        transform: translateX(-140vw);
+    }
+}
+.c-tree{
+    height: 105vmax;
+    width: 100vmax;
+    position: absolute;
+    z-index: 19;    
+}
+li{
+    list-style: none;
+}
+#form-dest{
+    display: grid;
+    justify-items: center;
+}
+.share-list{
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 100px;
+    z-index: 10;
+    background-color: #151154d8;
+    backdrop-filter: blur(3px);
+    border-radius: 6px;
+    height: 0;
+    font-family:  Arial, Helvetica, sans-serif;
+    text-shadow: 0 0 5px black;
+    overflow: hidden;
+    transition: height 0.5s;
+    justify-items: center;
+}
+.share-list > div{
+    width: clamp(300px, 70vw, 480px);
+    text-align: justify;
+    color: white;
+    align-self: center;
+}
+
+[drop-down]{
+    width: 100%;
+    height: 100%;
+}
+.btn-share{
+    align-content: center;
+    height: fit-content;
+}
+button:active{
+    transform: scale(1.1);
+}
+button, #gift-btn{
+    border: solid dodgerblue;
+    background: transparent;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+#btn-copiar-link{
+    width: max-content;
+}
+input{
+    width: 60px;
+}
+input, select {
+    outline: none;
+    border: solid dodgerblue;
+    background: transparent;
+    color: white;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 2px;
+}
+option{
+    color: #ffffff;
+    background-color: #1e1868;
+}
+
+#share-wpp{
+    border: solid dodgerblue;
+    width: fit-content;
+    border-radius: 10px;
+    padding: 3px;
+    display: grid;
+    justify-items: center;
+}
+#share-wpp p{
+    color: white;
+    margin: 0;
+    text-decoration: none;
+}
+[tree=left]{
+    animation: growLeft 3s forwards;
+    animation-delay: .5s;
+}
+[tree=right]{
+    animation: growRight 3s forwards;
+}
+
+@keyframes growLeft {
+    from{
+        transform: scale(1) translateX(0);
+    } 
+    to{
+        transform: scale(4) translateX(-100vw);
+    }
+}
+@keyframes growRight {
+    from{
+        transform: scale(1) translateX(0);
+    } 
+    to{
+        transform: scale(4) translateX(100vw);
+    }
+}
