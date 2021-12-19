@@ -6,8 +6,8 @@ let contentDiv = document.querySelector('div [content]')
 let slogan = document.querySelector('#slogan')
 let textGift = document.querySelector('#text-gift')
 let formDest = document.querySelector('#form-dest')
-let gifts1 = ['um Corola', 'uma viagem para o Hawaii', 'um terreno da lua', '1L de gasolina', 'um beijo', 'um ingresso pro Now United', 'uma Ferrari Monza', 'um outfit Gucci']
-let gifts2 = ['um aperto de mão', 'um acarajé na tia do centro', 'um abraço', 'três tapinha nas costas', 'um rolê na praia', 'uma piscadela', 'um CD da Xuxa', 'um cafuné']
+let gifts1 = ['um Corolla', 'uma viagem para o Hawaii', 'um terreno da lua', '1L de gasolina', 'um beijo', 'um ingresso pro Now United', 'uma Ferrari Monza', 'um outfit Gucci']
+let gifts2 = ['um aperto de mão', 'um cafuné', 'um abraço', 'três tapinha nas costas', 'um rolê na praia', 'uma piscadela', 'um CD da Xuxa', 'um acarajé na tia do centro']
 let shareList = document.querySelector('.share-list')
 let santaClaus = document.querySelector('.santa-claus')
 let corpo = document.querySelector('#corpo')
@@ -15,7 +15,7 @@ let btnShareWpp = document.querySelector('#share-wpp')
 let btnCopy = document.querySelector('#btn-copiar-link')
 let remetente = {
     name: queryParams.get('name') || 'Gabriel',
-    gift1: gifts1[queryParams.get('gift1')] || 'um Bugatti La Voiture Noire', 
+    gift1: gifts1[queryParams.get('gift1')] || 'uma Bugatti La Voiture Noire', 
     gift2: gifts2[queryParams.get('gift2')] || 'um abraço'}
 const verificaHifen = (e) => {
     return e != '-' ? e : " "
@@ -131,6 +131,7 @@ formDest.onsubmit = (e) =>{
         
         btnCopy.setAttribute('data-clipboard-text', linkToShare)
         btnCopy.click()
+
         let textCopied = document.createElement('div')
         textCopied.innerText = "link copiado!"
         textCopied.style.display = "absolute"
