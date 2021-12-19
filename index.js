@@ -5,8 +5,8 @@ let contentDiv = document.querySelector('div [content]')
 let slogan = document.querySelector('#slogan')
 let textGift = document.querySelector('#text-gift')
 let formDest = document.querySelector('#form-dest')
-let gifts1 = ['um Corola', 'um terreno da lua', '1L de gasolina']
-let gifts2 = ['um acarajé na tia do centro', 'um abraço', 'três tapinha nas costas']
+let gifts1 = ['um Corola', 'uma viagem para o Hawaii', 'um terreno da lua', '1L de gasolina', 'um beijo', 'um ingresso pro Now United', 'uma Ferrari Monza', 'um outfit Gucci']
+let gifts2 = ['um aperto de mão', 'um acarajé na tia do centro', 'um abraço', 'três tapinha nas costas', 'um rolê na praia', 'uma piscadela', 'um CD da Xuxa', 'um cafuné']
 let shareList = document.querySelector('.share-list')
 let santaClaus = document.querySelector('.santa-claus')
 let corpo = document.querySelector('#corpo')
@@ -14,7 +14,7 @@ let btnShareWpp = document.querySelector('#share-wpp')
 
 let remetente = {
     name: queryParams.get('name') || 'Gabriel',
-    gift1: gifts1[queryParams.get('gift1')] || 'um carro', 
+    gift1: gifts1[queryParams.get('gift1')] || 'um Bugatti La Voiture Noire', 
     gift2: gifts2[queryParams.get('gift2')] || 'um abraço'}
 const verificaHifen = (e) => {
     return e != '-' ? e : " "
