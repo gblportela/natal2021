@@ -1,3 +1,4 @@
+
 const query = decodeURIComponent(location.search.slice(1))
 let queryParams = new URLSearchParams(query)
 let trees = document.querySelectorAll('[tree]')
@@ -11,7 +12,7 @@ let shareList = document.querySelector('.share-list')
 let santaClaus = document.querySelector('.santa-claus')
 let corpo = document.querySelector('#corpo')
 let btnShareWpp = document.querySelector('#share-wpp')
-
+let btnCopy = document.querySelector('#btn-copiar-link')
 let remetente = {
     name: queryParams.get('name') || 'Gabriel',
     gift1: gifts1[queryParams.get('gift1')] || 'um Bugatti La Voiture Noire', 
@@ -49,6 +50,7 @@ window.onload = () => {
         element2.innerText = gifts2[key]
         formDest['gift2-dest'].appendChild(element2)
     }
+    new ClipboardJS(btnCopy)
 }
 
 let screenWidth = window.innerWidth
@@ -120,11 +122,26 @@ formDest.onsubmit = (e) =>{
         linkToShare = "whatsapp://send?text=https://feliznatal.github.io/natal2021/?" + encodeURIComponent(textParams)
         link.setAttribute("href", linkToShare)
         link.setAttribute("data-action", "share/whatsapp/share")
-        window.open(link) 
+        someAsyncMethod('oi').then( () =>{
+            window.open(link)
+        })
     } else{
         linkToShare = "https://feliznatal.github.io/natal2021/?" + encodeURIComponent(textParams)
-        navigator.clipboard.writeText(linkToShare);
+        //navigator.clipboard.writeText(linkToShare)
+        
+        btnCopy.setAttribute('data-clipboard-text', linkToShare)
+        btnCopy.click()
+        let textCopied = document.createElement('div')
+        textCopied.innerText = "link copiado!"
+        textCopied.style.display = "absolute"
+        btnCopy.insertAdjacentElement("afterend",textCopied)
+        setTimeout(() => {
+            textCopied.remove()
+        }, 1500);
     }
     
 }
 
+async function someAsyncMethod(p){
+    return await p
+}
