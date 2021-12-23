@@ -1,4 +1,3 @@
-
 const query = decodeURIComponent(location.search.slice(1))
 let queryParams = new URLSearchParams(query)
 let trees = document.querySelectorAll('[tree]')
@@ -120,29 +119,22 @@ formDest.onsubmit = (e) =>{
     console.log(linkToShare)
     if(e.submitter.id == "share-wpp"){
         linkToShare = "whatsapp://send?text=https://feliznatal.github.io/natal2021/?" + encodeURIComponent(textParams)
-        link.setAttribute("href", linkToShare)
+        /* link.setAttribute("href", linkToShare)
         link.setAttribute("data-action", "share/whatsapp/share")
-        someAsyncMethod('oi').then( () =>{
-            window.open(link)
-        })
+        window.open(link) */
+        window.location.assign(linkToShare)
     } else{
         linkToShare = "https://feliznatal.github.io/natal2021/?" + encodeURIComponent(textParams)
-        //navigator.clipboard.writeText(linkToShare)
         
         btnCopy.setAttribute('data-clipboard-text', linkToShare)
         btnCopy.click()
 
         let textCopied = document.createElement('div')
-        textCopied.innerText = "link copiado!"
-        textCopied.style.display = "absolute"
+        textCopied.innerText = "Link copiado!"
         btnCopy.insertAdjacentElement("afterend",textCopied)
         setTimeout(() => {
             textCopied.remove()
         }, 1500);
     }
     
-}
-
-async function someAsyncMethod(p){
-    return await p
 }
