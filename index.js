@@ -10,6 +10,8 @@ let gifts2 = ['um abraço', 'um cafuné', 'um aperto de mão' , 'três tapinha n
 let shareList = document.querySelector('.share-list')
 let santaClaus = document.querySelector('.santa-claus')
 let corpo = document.querySelector('#corpo')
+let shareOptions = document.querySelector("#share-options")
+let btnShare2 = document.querySelector("#btn-share2")
 let btnShareWpp = document.querySelector('#share-wpp')
 let btnCopy = document.querySelector('#btn-copiar-link')
 let remetente = {
@@ -63,13 +65,16 @@ window.onresize = () => {
     canvas.size(screenWidth, screenHeight)
 }
 
+if(false){
+
     setInterval(() => {
-if (Math.random() < 0.7) {
-    setTimeout(() => {
-    createStar();
-    }, Math.random() * 1000)
+        if (Math.random() < 0.7) {
+            setTimeout(() => {
+                createStar();
+            }, Math.random() * 1000)
+        }
+    }, 200)
 }
-}, 200)
 
 const createStar = () => {
 const x = Math.random() * screenWidth
@@ -109,32 +114,31 @@ function shareDrop(){
 }
 
 formDest.onsubmit = (e) =>{
-    e.preventDefault()
-    const name = formDest.name.value.replace(/\s/g, "-")
-    const gift1Dest = formDest['gift1-dest'].value
-    const gift2Dest = formDest['gift2-dest'].value
-    let link = document.createElement('a')
-    let linkToShare = ""
-    let textParams = `name=${name}&gift1=${gift1Dest}&gift2=${gift2Dest}`
-    console.log(linkToShare)
-    if(e.submitter.id == "share-wpp"){
-        linkToShare = "whatsapp://send?text=https://feliznatal.github.io/natal2021/?" + encodeURIComponent(textParams)
-        /* link.setAttribute("href", linkToShare)
-        link.setAttribute("data-action", "share/whatsapp/share")
-        window.open(link) */
-        window.location.assign(linkToShare)
-    } else{
-        linkToShare = "https://feliznatal.github.io/natal2021/?" + encodeURIComponent(textParams)
-        
-        btnCopy.setAttribute('data-clipboard-text', linkToShare)
-        btnCopy.click()
-
+    if(e.submitter.id == "btn-share2"){
+        e.preventDefault()
+        const name = formDest.name.value.replace(/\s/g, "-")
+        const gift1Dest = formDest['gift1-dest'].value
+        const gift2Dest = formDest['gift2-dest'].value
+        shareOptions.style.display = 'flex'
+        btnShare2.style.display = 'none'
+        let linkToShare = ""  
+        let textParams = `name=${name}&gift1=${gift1Dest}&gift2=${gift2Dest}`
+        linkToShare = "https://wa.me/?text=https://feliznatal.github.io/natal2021/?" + encodeURIComponent(textParams)
+        btnCopy.setAttribute('data-clipboard-text', 'https://feliznatal.github.io/natal2021/?' + encodeURIComponent(textParams))
+        formDest.setAttribute('action', linkToShare)
+    }else if(e.submitter.id == "btn-copiar-link"){
+        e.preventDefault()
+        shareOptions.style.display = 'none'
+        btnShare2.style.display = 'block'
         let textCopied = document.createElement('div')
         textCopied.innerText = "Link copiado!"
-        btnCopy.insertAdjacentElement("afterend",textCopied)
+        btnShare2.insertAdjacentElement("afterend", textCopied)
         setTimeout(() => {
             textCopied.remove()
-        }, 1500);
+        }, 1500)
+
+    } else{
+        shareOptions.style.display = 'none'
+        btnShare2.style.display = 'block'
     }
-    
 }

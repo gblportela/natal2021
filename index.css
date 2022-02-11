@@ -24,7 +24,7 @@ html, body {
     from{
         transform: translateX(100vw);
     } to{
-        transform: translateX(-100vw) ;
+        transform: translateX(-100vw);
     }
 }
 #corpo{
@@ -92,7 +92,7 @@ li{
 }
 .share-list{
     position: fixed;
-    width: 100vw;
+    width: calc(100vw + 20px);
     display: grid;
     grid-template-rows: 1fr 100px;
     z-index: 1;
@@ -119,6 +119,11 @@ li{
     align-content: center;
     margin: 3px 0;
     height: fit-content;
+}
+#share-options{
+    display: none;
+    flex-direction: column;
+    align-items: center;
 }
 button:active, #btn-copiar-link:active{
     transform: scale(1.1);
@@ -187,3 +192,4 @@ option{
         transform: scale(4) translateX(100vw);
     }
 }
+ 

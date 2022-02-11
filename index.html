@@ -20,37 +20,41 @@
 <body>
     
     <div id="corpo">
-        <img class="c-tree" tree src="imagens/christmas-tree.png">                
-        <img class="c-tree" tree src="imagens/christmas-tree.png">
-        <div class="share-list">
-            <div class="form-container">
-                <form id="form-dest">
-                    <p><input type="text" name="name" placeholder="Seu nome..." required> queria te dar
-                        <select name="gift1-dest" id="gift1-dest" form="form-dest">
-                        </select>, mas, como é deveras humilde, vai te dar
-                        <select name="gift2-dest" id="gift2-dest" form="form-dest">
-                        </select>!!!
-                    </p>
-                    <button id="share-wpp" name="form-dest" type="submit">
-                        <img src="imagens/icon-whatsapp.png" alt="ícone do WhatsApp">
-                        <p>Enviar por WhatsApp</p>
-                    </button>
-                    ou
-                    <button id="btn-copiar-link">Copiar link</button>
-                </form>
+              
+            <img class="c-tree" tree src="imagens/christmas-tree.png">                
+            <img class="c-tree" tree src="imagens/christmas-tree.png">
+            <div class="share-list">
+                <div class="form-container">
+                    <form id="form-dest" action="#" method="post">
+                        <p><input type="text" name="name" placeholder="Seu nome..." required> queria te dar
+                            <select name="gift1-dest" id="gift1-dest" form="form-dest">
+                            </select>, mas, como é deveras humilde, vai te dar
+                            <select name="gift2-dest" id="gift2-dest" form="form-dest">
+                            </select>!!!
+                        </p>
+                        <button id="btn-share2"">Compartilhar</button>
+                        <div id="share-options">
+                            <button id="share-wpp" name="form-dest" type="submit">
+                                <img src="imagens/icon-whatsapp.png" alt="ícone do WhatsApp">
+                                <p>Enviar por WhatsApp</p>
+                            </button>
+                            <p>ou</p>
+                            <button id="btn-copiar-link">Copiar link</button>
+                        </div>
+                    </form>
+                </div>
+                <button class="btn-share" onclick="shareDrop()">Voltar</button>
             </div>
-            <button class="btn-share" onclick="shareDrop()">Voltar</button>
-        </div>
-        <div content>
-            <h1 id="slogan">Gabriel está te desejando um feliz natal!</h1>
-            <img id="img-feliz-natal" src="https://c.tenor.com/dnMCIHEo1n8AAAAC/cat-kittens.gif" alt="gif feliz natal com gatinhos com gorros">
-            <p id="text-gift"> Ele queria te dar um carro, mas, como é deveras humilde, vai te dar um abraço!!!</p>
-            <div share-container>
-                <button class="btn-share" onclick="shareDrop()">Compartilhar</button>
+            <div content>
+                <h1 id="slogan">Gabriel está te desejando um feliz natal!</h1>
+                <img id="img-feliz-natal" src="https://c.tenor.com/dnMCIHEo1n8AAAAC/cat-kittens.gif" alt="gif feliz natal com gatinhos com gorros">
+                <p id="text-gift"> Ele queria te dar um carro, mas, como é deveras humilde, vai te dar um abraço!!!</p>
+                <div share-container>
+                    <button class="btn-share" onclick="shareDrop()">Compartilhar</button>
+                </div>
             </div>
-        </div>
-        <img class="santa-claus" santa-moves src="imagens/santa-claus.png">
-        <div id="emojis" >&#x1F385; &#x1F384; &#x2728; &#x1F496; &#x2764; &#x1F357; &#x2603; &#x1F31F; &#xFE0F; &#x2764; &#x1F525; &#x1F514; &#x2744; &#x1F385; &#x1F384;</div>
+            <img class="santa-claus" santa-moves src="imagens/santa-claus.png">
+            <div id="emojis" >&#x1F385; &#x1F384; &#x2728; &#x1F496; &#x2764; &#x1F357; &#x2603; &#x1F31F; &#xFE0F; &#x2764; &#x1F525; &#x1F514; &#x2744; &#x1F385; &#x1F384;</div>
     </div>
     <script src="clipboard/dist/clipboard.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.1.1/svg.min.js" integrity="sha512-Aj0P6wguH3GVlCfbvTyMM90Zq886ePyMEYlZooRfx+3wcSYyUa6Uv4iAjoJ7yiWdKamqQzKp7yr/TkMQ8EEWbQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
