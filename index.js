@@ -65,16 +65,13 @@ window.onresize = () => {
     canvas.size(screenWidth, screenHeight)
 }
 
-if(false){
-
-    setInterval(() => {
-        if (Math.random() < 0.7) {
-            setTimeout(() => {
-                createStar();
-            }, Math.random() * 1000)
-        }
-    }, 200)
-}
+setInterval(() => {
+    if (Math.random() < 0.7) {
+        setTimeout(() => {
+            createStar();
+        }, Math.random() * 1000)
+    }
+}, 200)
 
 const createStar = () => {
 const x = Math.random() * screenWidth
@@ -123,8 +120,8 @@ formDest.onsubmit = (e) =>{
         btnShare2.style.display = 'none'
         let linkToShare = ""  
         let textParams = `name=${name}&gift1=${gift1Dest}&gift2=${gift2Dest}`
-        linkToShare = "https://wa.me/?text=https://feliznatal.github.io/natal2021/?" + encodeURIComponent(textParams)
-        btnCopy.setAttribute('data-clipboard-text', 'https://feliznatal.github.io/natal2021/?' + encodeURIComponent(textParams))
+        linkToShare = "https://wa.me/?text=https://gblportela.github.io/natal2021/?" + encodeURIComponent(textParams)
+        btnCopy.setAttribute('data-clipboard-text', 'https://gblportela.github.io/natal2021/?' + encodeURIComponent(textParams))
         formDest.setAttribute('action', linkToShare)
     }else if(e.submitter.id == "btn-copiar-link"){
         e.preventDefault()
